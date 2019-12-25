@@ -1,0 +1,28 @@
+import pandas as pd
+import numpy as np
+np.random.seed(25)
+df1 = pd.DataFrame(np.random.rand(10,3),columns=['A','B','C'])
+print(df1)
+print("-------------------------")
+df1.iloc[-1] = np.nan
+print(df1)
+print("-------------------------")
+df2 = df1.add(1)
+print(df2)
+print("-------------------------")
+df3 = df1.add(1, fill_value = 10)
+print(df3)
+print("-------------------------")
+#adding series to dataframe
+tk = pd.Series(np.ones(10))
+print(tk)
+print("-------------------------")
+df4 = df1.add(tk , axis =0)
+print(df4)
+print("-------------------------")
+np.random.seed(5)
+df5 = pd.DataFrame(np.random.rand(5,5),columns=['A','B','C','D','E'])
+print(df5)
+print("-------------------------")
+df6 = df1.add(df5, fill_value = 10)
+print(df6)
